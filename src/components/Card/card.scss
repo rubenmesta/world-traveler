@@ -1,0 +1,88 @@
+.Card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  background-color: #fff;
+  position: relative;
+
+  .Card_badge {
+    background: #fff;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0.8px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    .Card_badge__eyebrow {
+      width: 10px;
+      height: 100%;
+      top: 0;
+      left: -10px;
+      position: absolute;
+    }
+
+    // ******
+    //  THIS COULD BE A DIFFERENT SOLUTIO N
+    //********
+
+    // span {
+    //   margin-left: 10px;
+    // }
+
+    // &::before {
+    //   content: "";
+    //   //   background: #f7b500;
+    //   width: 10px;
+    //   height: 100%;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   position: absolute;
+    // }
+  }
+
+  .Card_imageContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .Card_image {
+    height: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Card_details {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    text-align: left;
+    padding: 2rem;
+  }
+
+  @keyframes size {
+    0% {
+      padding: 10px 12px 8px;
+    }
+    50% {
+      padding: 14px 16px 12px;
+      margin-top: -4px;
+    }
+    100% {
+      padding: 10px 12px 8px;
+    }
+  }
+}
