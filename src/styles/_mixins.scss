@@ -1,0 +1,112 @@
+// We can delete this later and use p-c breakpoints
+$breakpoints: (
+  "tablet": 650px,
+  "desktop": 992px,
+  "hd": 1280px,
+) !default;
+
+@mixin breakpoint($break) {
+  @if map-has-key($map: $breakpoints, $key: $break) {
+    @media only screen and (min-width: map-get($breakpoints, $break)) {
+      @content;
+    }
+  } @else if $break == small {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+@mixin volkhov-font {
+  font-family: "Volkhov", sans-serif;
+  font-style: normal;
+}
+
+@mixin poppins-font {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+@mixin volkhov-regular {
+  @include volkhov-font();
+  font-weight: 400;
+}
+
+@mixin volkhov-bold {
+  @include volkhov-font();
+  font-weight: 700;
+}
+
+@mixin poppins-light {
+  @include poppins-font();
+  font-weight: 300;
+}
+
+@mixin poppins-regular {
+  @include poppins-font();
+  font-weight: 400;
+}
+
+@mixin poppins-bold {
+  @include poppins-font();
+  font-weight: 700;
+}
+
+@mixin button {
+  @include poppins-bold();
+  font-size: var(--size-font-lg);
+  height: var(--size-height-md);
+  letter-spacing: 1px;
+  max-width: 100%;
+  border-radius: calc(var(--size-border-radius-xl) - 0.75rem); // 20px
+  padding: 0 var(--size-spacing-lg);
+  cursor: pointer;
+  line-height: var(--size-line-height-text);
+}
+
+@mixin button-blue-primary {
+  background-color: var(--daylight-blue-primary);
+  color: var(--color-brand-white-base);
+  @include button();
+
+  &:hover {
+    background-color: var(--daylight-blue-primary);
+    filter: brightness(0.95);
+  }
+}
+
+@mixin button-golden-yellow {
+  background-color: var(--golden-yellow-light-secondary);
+  color: var(--dark-black);
+  @include button();
+
+  &:hover {
+    background-color: var(--golden-yellow-light-secondary);
+    filter: brightness(0.95);
+  }
+}
+
+@mixin button-salmon-daylight {
+  background-color: var(--salmon-daylight);
+  color: var(--dark-black);
+  @include button();
+
+  &:hover {
+    background-color: var(--button-primary-background-color-hover);
+    filter: brightness(0.95);
+  }
+}
+
+// @mixin fade-in-up {
+//   animation-name: fadeInUp;
+//   animation-duration: 0.7s;
+//   animation-fill-mode: both;
+//   animation-iteration-count: 1;
+//   animation-delay: 1s;
+
+//   @media (prefers-reduced-motion) {
+//     animation: none;
+//     animation-duration: 0.1s;
+//     animation-delay: 0;
+//   }
+// }

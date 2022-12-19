@@ -1,0 +1,65 @@
+@use "../styles/mixins";
+:root {
+  --color_background__white: #fff;
+  --color_font__light: #888;
+  --color_font__dark: #333;
+  --badge_color__blue: #32c5ff;
+  --badge_color__yellow: #f7b500;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #eeeff2;
+  color: var(--color_font__dark);
+}
+
+.container {
+  width: 100%;
+  margin: 3rem auto;
+
+  @include mixins.breakpoint("tablet") {
+    width: 73.125rem;
+  }
+
+  .title {
+    display: flex;
+    font-size: 48px;
+    color: #333333;
+    font-weight: 300;
+    padding-left: 1rem;
+  }
+}
+
+// Grid Layout
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 1rem;
+
+  @include mixins.breakpoint("desktop") {
+    grid-template-columns: repeat(12, [col] 1fr);
+
+    .first {
+      grid-column: col / span 12;
+      height: 25rem;
+    }
+
+    .second {
+      grid-column: col / span 6;
+      grid-row: 2;
+      height: 12.5rem;
+    }
+
+    .third {
+      grid-column: col 7 / span 6;
+      grid-row: 2;
+      height: 12.5rem;
+    }
+  }
+}

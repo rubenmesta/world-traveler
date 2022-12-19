@@ -1,33 +1,39 @@
+@use "../../styles/mixins";
+
 .Card {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0;
-  background-color: #fff;
+  background-color: var(--color_background__white);
   position: relative;
 
-  .Card_badge {
-    background: #fff;
+  @include mixins.breakpoint("tablet") {
+    flex-direction: row;
+  }
+
+  &_badge {
+    background: var(--color_background__white);
     font-size: 14px;
-    color: #333333;
+    color: var(--color_font__dark);
     letter-spacing: 0.8px;
     position: absolute;
     top: 20px;
     left: 0;
-    padding: 1rem;
+    padding: 0.5rem;
     text-transform: uppercase;
     font-weight: 600;
 
-    .Card_badge__eyebrow {
-      width: 10px;
+    &__accentColor {
+      width: 5px;
       height: 100%;
       top: 0;
-      left: -10px;
+      left: -5px;
       position: absolute;
     }
 
     // ******
-    //  THIS COULD BE A DIFFERENT SOLUTIO N
+    //  THIS COULD BE A DIFFERENT SOLUTION
     //********
 
     // span {
@@ -36,7 +42,7 @@
 
     // &::before {
     //   content: "";
-    //   //   background: #f7b500;
+    //   background: #f7b500;
     //   width: 10px;
     //   height: 100%;
     //   top: 0;
@@ -46,43 +52,62 @@
     // }
   }
 
-  .Card_imageContainer {
+  &_imageContainer {
     display: flex;
     flex-direction: column;
     flex: 1;
-  }
 
-  .Card_image {
-    height: 100%;
+    &__image {
+      height: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
 
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
+      @include mixins.breakpoint("tablet") {
+        height: 100%;
+      }
     }
   }
 
-  .Card_details {
+  &_details {
     display: flex;
     flex: 1;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: auto;
-    text-align: left;
-    padding: 2rem;
-  }
+    padding: 1.5rem;
 
-  @keyframes size {
-    0% {
-      padding: 10px 12px 8px;
+    &__eyebrow {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color_font__light);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 0;
     }
-    50% {
-      padding: 14px 16px 12px;
-      margin-top: -4px;
+    &__city {
+      font-size: 1.875rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      text-align: left;
+      margin: 0.5rem 0 0.3rem 0;
     }
-    100% {
-      padding: 10px 12px 8px;
+    &__date {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    &__description {
+      font-size: 1.125rem;
+      line-height: 28px;
+    }
+    &__button {
+      color: var(--color_background__white);
+      border: 0;
+      padding: 0.5rem;
+      width: 50%;
+      font-weight: 700;
+      font-size: 1rem;
     }
   }
 }
