@@ -31,25 +31,6 @@
       left: -5px;
       position: absolute;
     }
-
-    // ******
-    //  THIS COULD BE A DIFFERENT SOLUTION
-    //********
-
-    // span {
-    //   margin-left: 10px;
-    // }
-
-    // &::before {
-    //   content: "";
-    //   background: #f7b500;
-    //   width: 10px;
-    //   height: 100%;
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   position: absolute;
-    // }
   }
 
   &_imageContainer {
@@ -103,6 +84,7 @@
       text-transform: uppercase;
     }
     &__description {
+      color: var(--color_font__dark);
       font-size: var(--text-med);
       line-height: 28px;
     }
