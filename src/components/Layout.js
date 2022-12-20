@@ -1,15 +1,11 @@
 import { Head } from "./Head";
+import meta from "../_data/traveler.json";
 
 export const Layout = ({ children }) => {
   return (
     <>
-      <Head
-        title="World Traveler App"
-        description="This is a demo for Regions Bank"
-      />
-      {/* {title && title} */}
+      <Head title={meta?.title} description={meta?.description} />
       {children}
-      {/* a footer could go here */}
     </>
   );
 };

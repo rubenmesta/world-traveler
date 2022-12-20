@@ -3,8 +3,17 @@
   --color_background__white: #fff;
   --color_font__light: #888;
   --color_font__dark: #333;
+  --color_font__black: #000;
   --badge_color__blue: #32c5ff;
   --badge_color__yellow: #f7b500;
+
+  // font sizes
+  --text-normal: 1rem;
+  --text-xs: 0.125rem;
+  --text-small: calc(var(--text-normal) - var(--text-xs));
+  --text-med: calc(var(--text-normal) + (var(--text-xs)));
+  --text-large: calc(var(--text-normal) + var(--text-small));
+  --text-xlarge: calc(var(--text-normal) * 3);
 }
 
 body {
@@ -28,10 +37,10 @@ body {
 
   .title {
     display: flex;
-    font-size: 48px;
-    color: #333333;
-    font-weight: 300;
+    font-size: var(--text-xlarge);
+    color: var(--color_font__dark);
     padding-left: 1rem;
+    @include mixins.SourceSansPro-light;
   }
 }
 
@@ -53,13 +62,11 @@ body {
     .second {
       grid-column: col / span 6;
       grid-row: 2;
-      height: 12.5rem;
     }
 
     .third {
       grid-column: col 7 / span 6;
       grid-row: 2;
-      height: 12.5rem;
     }
   }
 }

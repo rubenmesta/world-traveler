@@ -8,21 +8,18 @@ function App({ title }) {
     <Layout>
       <nav></nav>
       <main className="container">
-        <h1 className="title">{data.title}</h1>
+        <header>
+          <h1 className="title">{data.title}</h1>
+        </header>
         <section className="wrapper">
           {data.cards.map((card, index) => {
             return (
               <Card
                 key={index}
-                src={card.src}
-                alt={card.alt}
+                image={card.image}
                 destination={card.destination}
                 className={card.class}
-                eyebrow={card.eyebrow}
-                city={card.city}
-                date={card.date}
-                description={card.description}
-                flip={card.flip}
+                details={card.details}
               />
             );
           })}

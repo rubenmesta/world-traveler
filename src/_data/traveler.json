@@ -1,35 +1,55 @@
 {
+  "meta": {
+    "title": "World Traveler App",
+    "description": "This is a demo for Regions Bank"
+  },
   "title": "World Traveler",
   "cards": [
     {
-      "src": "/images/london-img.jpg",
+      "image": {
+        "src": "/images/london-img.jpg",
+        "alt": "London England Street"
+      },
       "alt": "London England Street",
+      "details": {
+        "eyebrow": "Register Now",
+        "city": "London, England",
+        "date": "April 15, 2020",
+        "description": "Ut placet, inquam tum dicere exorsus est laborum et via procedat oratio quaerimus igitur, quid et caritatem, quae sine causa? quae fuerit causa, mox videro; interea hoc epicurus in culpa, qui blanditiis praesentium voluptatum adipiscendarum causa aut officiis debitis aut fugit, sed uti oratione perpetua.",
+        "buttonText": "Plan your trip"
+      },
       "destination": "International",
-      "class": "first",
-      "eyebrow": "Register Now",
-      "city": "London, England",
-      "date": "April 15, 2020",
-      "description": "Ut placet, inquam tum dicere exorsus est laborum et via procedat oratio quaerimus igitur, quid et caritatem, quae sine causa? quae fuerit causa, mox videro; interea hoc epicurus in culpa, qui blanditiis praesentium voluptatum adipiscendarum causa aut officiis debitis aut fugit, sed uti oratione perpetua."
+      "class": "first"
     },
     {
-      "src": "/images/atlanta-img.png",
-      "alt": "Atlanta Georgia Sky View",
+      "image": {
+        "src": "/images/atlanta-img.png",
+        "alt": "Atlanta Georgia Sky View"
+      },
+      "details": {
+        "eyebrow": "Register Now",
+        "city": "Atlanta, GA",
+        "date": "March 10, 2019",
+        "description": "Torquatos nostros? quos tu paulo ante cum soluta nobis est.",
+        "buttonText": "Get Started"
+      },
       "destination": "Domestic",
-      "class": "second",
-      "eyebrow": "Register Now",
-      "city": "Atlanta, GA",
-      "date": "March 10, 2019",
-      "description": "Torquatos nostros? quos tu paulo ante cum soluta nobis est."
+      "class": "second"
     },
     {
-      "src": "/images/singapore-img.jpg",
-      "alt": "Singapore City View",
+      "image": {
+        "src": "/images/singapore-img.jpg",
+        "alt": "Singapore City View"
+      },
+      "details": {
+        "eyebrow": "3 Spots Left!",
+        "city": "Singapore",
+        "date": "February 15, 2020",
+        "description": "Primum igitur, inquit, sic agam, ut aliquid ex eo delectu.",
+        "buttonText": "Reserve your spot"
+      },
       "destination": "International",
-      "class": "third",
-      "eyebrow": "3 Spots Left!",
-      "city": "Singapore",
-      "date": "February 15, 2020",
-      "description": "Primum igitur, inquit, sic agam, ut aliquid ex eo delectu."
+      "class": "third"
     }
   ]
 }
