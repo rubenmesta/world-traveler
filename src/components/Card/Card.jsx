@@ -53,7 +53,9 @@ export const Card = ({ destination, image, details, className }) => {
       </div>
       <div className="Card_details">
         {details.eyebrow && (
-          <span className="Card_details__eyebrow">{details.eyebrow}</span>
+          <span className="Card_details__eyebrow" aria-hidden="false">
+            {details.eyebrow}
+          </span>
         )}
         {details.city && (
           <h2 className="Card_details__city">{details.city} </h2>
@@ -71,6 +73,7 @@ export const Card = ({ destination, image, details, className }) => {
             style={buttonStyle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            ariaLabel="hidden"
           >
             {details.buttonText}
           </CallToActionButton>
