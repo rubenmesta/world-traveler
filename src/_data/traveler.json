@@ -10,7 +10,7 @@
         "src": "/images/london-img.jpg",
         "alt": "London England Street"
       },
-      "alt": "London England Street",
+      "alt": "Illustration of a London England street",
       "details": {
         "eyebrow": "Register Now",
         "city": "London, England",
@@ -24,7 +24,7 @@
     {
       "image": {
         "src": "/images/atlanta-img.png",
-        "alt": "Atlanta Georgia Sky View"
+        "alt": "Travel to Atlanta Georgia sky view"
       },
       "details": {
         "eyebrow": "Register Now",
@@ -39,7 +39,7 @@
     {
       "image": {
         "src": "/images/singapore-img.jpg",
-        "alt": "Singapore City View"
+        "alt": "Illustration of Singapore city view"
       },
       "details": {
         "eyebrow": "3 Spots Left!",

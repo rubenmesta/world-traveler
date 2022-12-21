@@ -1,6 +1,7 @@
-export const Icon = ({ ariaLabel }) => {
+export const Icon = ({ ariaLabel, role }) => {
   return (
     <svg
+      aria-label={ariaLabel}
       fill="currentColor"
       height="13"
       viewBox="0 0 8 13"

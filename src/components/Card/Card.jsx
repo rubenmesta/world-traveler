@@ -6,6 +6,8 @@ import { CallToActionButton } from "../CallToActionButton";
 export const Card = ({ destination, image, details, className }) => {
   const destinationColor = destination === "Domestic" ? "#32C5FF" : "#F7B500";
   const badgeText = destination === "Domestic" ? "Domestic" : "International";
+
+  const { eyebrow, city, date, description, buttonText } = details;
   const [isHover, setIsHover] = useState(false);
 
   const handleMouseEnter = () => {
@@ -27,55 +29,50 @@ export const Card = ({ destination, image, details, className }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    alert(`You're going to ${details.city}!`);
+    alert(`You're going to ${city}!`);
   };
 
   return (
-    <div className={["Card", className].join(" ")}>
-      <div className="Card_badge">
+    <div className={["card", className].join(" ")}>
+      <div className="card_badge">
         <span
           style={{ background: destinationColor }}
-          className="Card_badge__accentColor"
+          className="card_badge--accentColor"
         ></span>
         <span>{badgeText}</span>
       </div>
-      <div className="Card_imageContainer">
-        <div
-          //   role="img"
-          //   aria-labelledby={image.ariaLabelBy}
-          className="Card_imageContainer__image"
-          //   style={{
-          //     backgroundImage: `url(${image.src})`,
-          //   }}
-        >
-          <img alt={image.alt} src={image.src} />
+      <div className="card_imageContainer">
+        <div className="card_image">
+          {image && (
+            <img
+              alt={image.alt}
+              src={image.src}
+              role="presentation"
+              aria-hidden="true"
+            />
+          )}
         </div>
       </div>
-      <div className="Card_details">
-        {details.eyebrow && (
-          <span className="Card_details__eyebrow" aria-hidden="false">
-            {details.eyebrow}
-          </span>
-        )}
-        {details.city && (
-          <h2 className="Card_details__city">{details.city} </h2>
-        )}
-        {details.date && (
-          <span className="Card_details__date">{details.date} </span>
-        )}
-        {details.description && (
-          <p className="Card_details__description">{details.description}</p>
-        )}
-        {details.buttonText && (
+      <div className="card_details">
+        <div className="card_headers">
+          {city && <h2 className="card_city">{city} </h2>}
+          {eyebrow && (
+            <span className="card_eyebrow" aria-hidden="false">
+              {eyebrow}
+            </span>
+          )}
+        </div>
+        {date && <span className="card_date">{date} </span>}
+        {description && <p className="card_description">{description}</p>}
+        {buttonText && (
           <CallToActionButton
             onClick={handleClick}
-            className="Card_details__button"
+            className="card_button"
             style={buttonStyle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            ariaLabel="hidden"
           >
-            {details.buttonText}
+            {buttonText}
           </CallToActionButton>
         )}
       </div>

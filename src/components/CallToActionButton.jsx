@@ -10,7 +10,7 @@ export const CallToActionButton = ({
   return (
     <button onClick={onClick} type="button" className={className} {...rest}>
       {children}
-      <Icon ariaLabel={ariaLabel} />
+      <Icon ariaLabel="hidden" />
     </button>
   );
 };

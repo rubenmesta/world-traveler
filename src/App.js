@@ -3,7 +3,7 @@ import { Layout } from "./components/Layout";
 import { Card } from "./components/Card/Card";
 import data from "./_data/traveler.json";
 
-function App({ title }) {
+function App() {
   return (
     <Layout>
       <nav></nav>

@@ -1,6 +1,6 @@
 @use "../../styles/mixins";
 
-.Card {
+.card {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@
     text-transform: uppercase;
     @include mixins.SourceSansPro-semiBold;
 
-    &__accentColor {
+    &--accentColor {
       width: 5px;
       height: 100%;
       top: 0;
@@ -37,18 +37,17 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+  }
+  &_image {
+    height: 200px;
 
-    &__image {
-      height: 200px;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
 
-      & img {
-        width: 100%;
-        height: 100%;
-      }
-
-      @include mixins.breakpoint("tablet") {
-        height: 100%;
-      }
+    @include mixins.breakpoint("tablet") {
+      height: 100%;
     }
   }
 
@@ -58,48 +57,52 @@
     justify-content: center;
     flex-direction: column;
     padding: 1.5rem;
+  }
+  &_headers {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  &_eyebrow {
+    @include mixins.SourceSansPro-semiBold;
+    font-size: var(--text-small);
+    // this is what the mock has but it is not accesible - Contrast Ratio 3.54:1
+    // Hence the filter
+    color: var(--color_font__light);
+    filter: brightness(0.7);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+  &_city {
+    @include mixins.SourceSansPro-bold;
+    font-size: var(--text-large);
+    letter-spacing: -0.3px;
+    text-align: left;
+    margin: 0.5rem 0 0.3rem 0;
+  }
+  &_date {
+    @include mixins.SourceSansPro-bold;
+    font-size: var(--text-normal);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  &_description {
+    color: var(--color_font__dark);
+    font-size: var(--text-med);
+    line-height: 28px;
+  }
+  &_button {
+    color: var(--color_font__black);
+    @include mixins.button;
 
-    &__eyebrow {
-      @include mixins.SourceSansPro-semiBold;
-      font-size: var(--text-small);
-      // this is what the mock has but it is not accesible - Contrast Ratio 3.54:1
-      // Hence the filter
-      color: var(--color_font__light);
-      filter: brightness(0.7);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 0;
-    }
-    &__city {
-      @include mixins.SourceSansPro-bold;
-      font-size: var(--text-large);
-      letter-spacing: -0.3px;
-      text-align: left;
-      margin: 0.5rem 0 0.3rem 0;
-    }
-    &__date {
-      @include mixins.SourceSansPro-bold;
-      font-size: var(--text-normal);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    &__description {
-      color: var(--color_font__dark);
-      font-size: var(--text-med);
-      line-height: 28px;
-    }
-    &__button {
-      color: var(--color_font__black);
-      @include mixins.button;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      svg {
-        margin-left: 8px;
-        width: 10px;
-      }
+    svg {
+      margin-left: 8px;
+      width: 10px;
     }
   }
 }
