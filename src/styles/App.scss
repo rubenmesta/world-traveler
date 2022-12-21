@@ -30,7 +30,7 @@ body {
   width: 100%;
   margin: 3rem auto;
 
-  @include mixins.breakpoint("tablet") {
+  @include mixins.breakpoint("hd") {
     width: 73.125rem;
   }
 
